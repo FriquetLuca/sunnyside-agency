@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "Fraunces";
+  src: url("assets/fonts/Fraunces_Soft-Black.ttf");
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("assets/fonts/Barlow-Black.ttf");
+}
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: "Fraunces";
+  font-style: normal;
+}
+
+body {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.head {
+  top: 0;
+  height: 800px;
+  text-align: center;
+  background-image: url("assets/img/grapefruit.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.head_title {
+  padding: 0;
+  margin: 0;
+  padding-top: 195px;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 69px;
+  text-align: center;
+  letter-spacing: 8.75px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.head_options {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.head_options_choice {
+  display: inline;
+  float: right;
+  color: #FFFFFF;
+  padding-top: 50px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: "Barlow";
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: -0.128571px;
+}
+.head_contact {
+  display: inline;
+  float: right;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 28px;
+  margin-left: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 34px;
+  margin-right: 48px;
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: -0.107143px;
+  text-transform: uppercase;
+}
+.head_contact:hover {
+  color: #FFFFFF;
+  background-color: #77cdf5;
+}
+.head_sunnyside {
+  margin-left: 40px;
+  margin-top: 50px;
+  width: 170px;
+  height: 33px;
+  display: inline;
+  float: left;
+  background-image: url("assets/img/sunnyside 2-1.svg");
+  background-repeat: no-repeat;
+}

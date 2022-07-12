@@ -1,0 +1,104 @@
+// 760px et inférieur => Mobile
+
+@font-face {
+    font-family: "Fraunces";
+    src: url("assets/fonts/Fraunces_Soft-Black.ttf");
+}
+@font-face {
+    font-family: "Barlow";
+    src: url("assets/fonts/Barlow-Black.ttf");
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Fraunces';
+    font-style: normal;
+}
+body {
+    max-width: 1440px;
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+@mixin theme($scale) {
+    .head {
+        top: 0;
+        height: $scale * 800px;
+        text-align: center;
+        background-image: url('assets/img/grapefruit.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        &_title {
+            padding: 0;
+            margin: 0;
+            padding-top: $scale * 195px;
+            font-weight: 900;
+            font-size: 56px;
+            line-height: 69px;
+            text-align: center;
+            letter-spacing: 8.75px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        &_options {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            &_choice {
+                display: inline;
+                float: right;
+                color: #FFFFFF;
+                padding: {
+                    top: 50px;
+                    left: 24px;
+                    right: 24px;
+                }
+                font-family: 'Barlow';
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 25px;
+                letter-spacing: -0.128571px;
+            }
+        }
+        &_contact {
+            display: inline;
+            float: right;
+            background: #FFFFFF;
+            border: none;
+            border-radius: 28px;
+            margin-left: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-top: 34px;
+            margin-right: 48px;
+            font-family: 'Fraunces';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 25px;
+            letter-spacing: -0.107143px;
+            text-transform: uppercase;
+            &:hover {
+                color: #FFFFFF;
+                background-color: #77cdf5;
+            }
+        }
+        &_sunnyside {
+            margin-left: 40px;
+            margin-top: 50px;
+            width: 170px;
+            height: 33px;
+            display: inline;
+            float: left;
+            background-image: url('assets/img/sunnyside\ 2-1.svg');
+            background-repeat: no-repeat;
+        }
+    }    
+}
+
+@include theme($scale: 1.0);
