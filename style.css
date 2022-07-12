@@ -23,6 +23,7 @@ body {
   top: 0;
   height: 800px;
   text-align: center;
+  background-size: contain;
   background-image: url("assets/img/grapefruit.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -56,6 +57,9 @@ body {
   font-size: 18px;
   line-height: 25px;
   letter-spacing: -0.128571px;
+}
+.head_options_choice:hover {
+  color: #77cdf5;
 }
 .head_contact {
   display: inline;
@@ -91,10 +95,287 @@ body {
   float: left;
   background-image: url("assets/img/sunnyside 2-1.svg");
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .elements {
   display: grid;
   grid-template-columns: 720px 720px;
+  grid-gap: 0px 0px;
   grid-template-areas: "brand egg" "glass audience" "graphic photography";
+}
+.elements section {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.img-block-txt, .photography, .graphic, .glass, .egg {
+  display: block;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.egg {
+  background-image: url("assets/img/egg.jpg");
+}
+
+.glass {
+  background-image: url("assets/img/glass.jpg");
+}
+
+.graphic {
+  background-image: url("assets/img/graphic-design.png");
+}
+
+.photography {
+  background-image: url("assets/img/photography.png");
+}
+
+.brand, .audience {
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+}
+
+.details {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 165px;
+  margin-right: 165px;
+  font-style: normal;
+  font-weight: 900;
+}
+.details h2 {
+  font-family: "Fraunces";
+  font-size: 40px;
+  line-height: 49px;
+  letter-spacing: -0.285714px;
+  color: #24303E;
+}
+.details p {
+  font-family: "Barlow";
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -0.128571px;
+  color: #808397;
+}
+.details_underline, .details_underline-2, .details_underline-1 {
+  height: 8px;
+  width: 124px;
+  border-radius: 10px;
+  opacity: 0.25;
+}
+.details_underline-1 {
+  background-color: #FAD400;
+}
+.details_underline-2 {
+  background-color: #FE7766;
+}
+.details_content:hover .details_underline, .details_content:hover .details_underline-1, .details_content:hover .details_underline-2 {
+  opacity: 1;
+}
+.details_content:hover .details_underline-1, .details_content:hover .details_underline-2 {
+  opacity: 1;
+}
+.details_content_link {
+  position: absolute;
+  margin-top: -14px;
+  z-index: 1;
+}
+.details_content_link a {
+  font-family: "Fraunces";
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #24303E;
+  text-decoration: none;
+}
+
+.testimonials {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+.testimonials h3 {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 5px;
+  color: #A7AAAD;
+}
+.testimonials_posts {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.testimonials_post {
+  width: calc(33% - 30px);
+  min-width: 340px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.testimonials_comment {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+}
+.testimonials_comment p {
+  font-family: "Barlow";
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.128571px;
+  color: #5B636D;
+}
+.testimonials_comment h2 {
+  font-family: "Fraunces";
+  font-weight: 900;
+  line-height: 22px;
+  letter-spacing: -0.128571px;
+  color: #24303E;
+}
+.testimonials_comment h3 {
+  font-family: "Barlow";
+  font-size: 14px;
+  line-height: 25px;
+  letter-spacing: -0.1px;
+  color: #A7AAAD;
+}
+.testimonials_picture, .testimonials_picture-3, .testimonials_picture-2, .testimonials_picture-1 {
+  width: 72px;
+  height: 72px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.testimonials_picture-1 {
+  background-image: url("assets/img/pic-1.png");
+}
+.testimonials_picture-2 {
+  background-image: url("assets/img/pic-2.png");
+}
+.testimonials_picture-3 {
+  background-image: url("assets/img/pic-3.png");
+}
+
+.foot, .foot_pic, .foot_pic-4, .foot_pic-3, .foot_pic-2, .foot_pic-1, .foot_pics {
+  padding: 0;
+  margin: 0;
+  background-color: #90D4C6;
+}
+.foot_nav {
+  margin: 0;
+  padding: 0;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.foot_nav_elem {
+  margin-left: 28px;
+  margin-right: 28px;
+}
+.foot_nav_elem a {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: -0.128571px;
+  color: #458D7E;
+  text-decoration: none;
+}
+.foot_nav_elem a:hover {
+  color: #FFFFFF;
+}
+.foot_pics {
+  display: grid;
+  grid-template-columns: 360px 360px 360px 360px;
+  grid-gap: 0px 0px;
+  grid-template-areas: "brand egg" "glass audience" "graphic photography";
+}
+.foot_sunnyside-logo {
+  margin-top: 72px;
+  height: 33px;
+  background-size: contain;
+  background-image: url("assets/img/sunnyside 2.svg");
+  filter: brightness(40%);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.foot_pic, .foot_pic-4, .foot_pic-3, .foot_pic-2, .foot_pic-1 {
+  display: block;
+  width: 360px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.foot_pic-1 {
+  background-image: url("assets/img/milk.jpg");
+}
+.foot_pic-2 {
+  background-image: url("assets/img/grapefruit-plate.jpg");
+}
+.foot_pic-3 {
+  background-image: url("assets/img/cone.jpg");
+}
+.foot_pic-4 {
+  background-image: url("assets/img/sugar.jpg");
+}
+
+.socialMedia, .pinterest, .twitter, .snap, .fb {
+  width: 20px;
+  height: 20px;
+  margin-left: 14px;
+  margin-right: 14px;
+  margin-bottom: 72px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(45%);
+}
+
+.fb {
+  background-image: url("assets/img/facebook.svg");
+}
+.fb:hover {
+  filter: brightness(100%);
+}
+
+.snap {
+  background-image: url("assets/img/camera.svg");
+}
+.snap:hover {
+  filter: brightness(100%);
+}
+
+.twitter {
+  background-image: url("assets/img/twitter.svg");
+}
+.twitter:hover {
+  filter: brightness(100%);
+}
+
+.pinterest {
+  background-image: url("assets/img/pinterest.svg");
+}
+.pinterest:hover {
+  filter: brightness(100%);
 }

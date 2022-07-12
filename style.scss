@@ -11,6 +11,7 @@
 }
 $maxWidth: 1440px;
 $halfMaxWidth: math.div($maxWidth, 2);
+$quarterMaxWidth: math.div($maxWidth, 4);
 
 html, body {
     padding: 0;
@@ -26,18 +27,19 @@ body {
     }
 }
 
-@mixin theme($scale) {
+@mixin theme {
     .head {
         top: 0;
-        height: $scale * 800px;
+        height: 800px;
         text-align: center;
+        background-size:contain;
         background-image: url('assets/img/grapefruit.png');
         background-repeat: no-repeat;
         background-position: center;
         &_title {
             padding: 0;
             margin: 0;
-            padding-top: $scale * 195px;
+            padding-top: 195px;
             font-weight: 900;
             font-size: 56px;
             line-height: 69px;
@@ -64,6 +66,9 @@ body {
                 font-size: 18px;
                 line-height: 25px;
                 letter-spacing: -0.128571px;
+                &:hover {
+                    color: #77cdf5;
+                }
             }
         }
         &_contact {
@@ -100,16 +105,313 @@ body {
             float: left;
             background-image: url('assets/img/sunnyside\ 2-1.svg');
             background-repeat: no-repeat;
+            background-position: center;
         }
     }
     .elements {
         display: grid;
         grid-template-columns: $halfMaxWidth $halfMaxWidth;
+        grid-gap: 0px 0px;
         grid-template-areas:
             "brand egg" 
             "glass audience"
             "graphic photography";
+        section {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+    }
+    .img-block-txt {
+        display: block;
+        height: 600px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .egg {
+        @extend .img-block-txt;
+        background-image: url('assets/img/egg.jpg');
+    }
+    .glass {
+        @extend .img-block-txt;
+        background-image: url('assets/img/glass.jpg');
+    }
+    .graphic {
+        @extend .img-block-txt;
+        background-image: url('assets/img/graphic-design.png');
+    }
+    .photography {
+        @extend .img-block-txt;
+        background-image: url('assets/img/photography.png');
+    }
+    .brand {
+        padding: 0px;
+        margin: 0px;
+        position: relative;
+    }
+    .audience {
+        @extend .brand;
+    }
+    .details {
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        margin-left: 165px;
+        margin-right: 165px;
+        font-style: normal;
+        font-weight: 900;
+        h2 {
+            font-family: 'Fraunces';
+            font-size: 40px;
+            line-height: 49px;
+            letter-spacing: -0.285714px;
+            color: #24303E;
+        }
+        p {
+            font-family: 'Barlow';
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 30px;
+            letter-spacing: -0.128571px;
+            color: #808397;
+        }
+        &_underline {
+            height: 8px;
+            width: 124px;
+            border-radius: 10px;
+            opacity: 0.25;
+            &-1 {
+                @extend .details_underline;
+                background-color: #FAD400;
+            }
+            &-2 {
+                @extend .details_underline;
+                background-color: #FE7766;
+            }
+        }
+        &_content {
+            &:hover {
+                .details_underline {
+                    opacity: 1.0;
+                    &-1, &-2 {
+                        opacity: 1.0;
+                    }
+                }
+            }
+            &_link {
+                position: absolute;
+                margin-top: -14px;
+                z-index: 1;
+                a {
+                    font-family: 'Fraunces';
+                    font-size: 15px;
+                    line-height: 25px;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    color: #24303E;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .testimonials {
+        margin-top: 120px;
+        margin-bottom: 120px;
+        margin-left: 80px;
+        margin-right: 80px;
+        h3 {
+            font-family: 'Fraunces';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 20px;
+            line-height: 25px;
+            text-align: center;
+            letter-spacing: 5px;
+            color: #A7AAAD;
+        }
+        &_posts {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        &_post {
+            width: calc(33% - 30px);
+            min-width: 340px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        &_comment {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            text-align: center;
+            p {
+                font-family: 'Barlow';
+                font-weight: 600;
+                line-height: 32px;
+                letter-spacing: -0.128571px;
+                color: #5B636D;
+            }
+            h2 {
+                font-family: 'Fraunces';
+                font-weight: 900;
+                line-height: 22px;
+                letter-spacing: -0.128571px;
+                color: #24303E;
+            }
+            h3 {
+                font-family: 'Barlow';
+                font-size: 14px;
+                line-height: 25px;
+                letter-spacing: -0.1px;
+                color: #A7AAAD;
+            }
+        }
+        &_picture {
+            width: 72px;
+            height: 72px;
+            display: block;
+            background-size:contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-left: auto;
+            margin-right: auto;
+            &-1 {
+                @extend .testimonials_picture;
+                background-image: url('assets/img/pic-1.png');
+            }
+            &-2 {
+                @extend .testimonials_picture;
+                background-image: url('assets/img/pic-2.png');
+            }
+            &-3 {
+                @extend .testimonials_picture;
+                background-image: url('assets/img/pic-3.png');
+            }
+        }
+    }
+    .foot {
+        padding: 0;
+        margin: 0;
+        background-color: #90D4C6;
+        &_nav {
+            margin: 0;
+            padding: 0;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            &_elem {
+                margin-left: 28px;
+                margin-right: 28px;
+                a {
+                    font-family: 'Barlow';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 25px;
+                    letter-spacing: -0.128571px;
+                    color: #458D7E;
+                    text-decoration:none;
+                    &:hover {
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+        &_pics {
+            @extend .foot;
+            display: grid;
+            grid-template-columns: $quarterMaxWidth $quarterMaxWidth $quarterMaxWidth $quarterMaxWidth;
+            grid-gap: 0px 0px;
+            grid-template-areas:
+                "brand egg" 
+                "glass audience"
+                "graphic photography";
+        }
+        &_sunnyside-logo {
+            margin-top: 72px;
+            height: 33px;
+            background-size:contain;
+            background-image: url('assets/img/sunnyside\ 2.svg');
+            filter: brightness(40%);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &_pic {
+            @extend .foot;
+            display: block;
+            width: $quarterMaxWidth;
+            height: 450px;
+            background-repeat: no-repeat;
+            background-size:contain;
+            background-position: center;
+            &-1 {
+                @extend .foot_pic;
+                background-image: url('assets/img/milk.jpg');
+            }
+            &-2 {
+                @extend .foot_pic;
+                background-image: url('assets/img/grapefruit-plate.jpg');
+            }
+            &-3 {
+                @extend .foot_pic;
+                background-image: url('assets/img/cone.jpg');
+            }
+            &-4 {
+                @extend .foot_pic;
+                background-image: url('assets/img/sugar.jpg');
+            }
+        }
+    }
+    .socialMedia {
+        width: 20px;
+        height: 20px;
+        margin-left: 14px;
+        margin-right: 14px;
+        margin-bottom: 72px;
+        display: block;
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: brightness(45%);
+    }
+    .fb {
+        @extend .socialMedia;
+        background-image: url('assets/img/facebook.svg');
+        &:hover {
+            filter: brightness(100%);
+        }
+    }
+    .snap {
+        @extend .socialMedia;
+        background-image: url('assets/img/camera.svg');
+        &:hover {
+            filter: brightness(100%);
+        }
+    }
+    .twitter {
+        @extend .socialMedia;
+        background-image: url('assets/img/twitter.svg');
+        &:hover {
+            filter: brightness(100%);
+        } // 2C7566
+    }
+    .pinterest {
+        @extend .socialMedia;
+        background-image: url('assets/img/pinterest.svg');
+        &:hover {
+            filter: brightness(100%);
+        }
     }
 }
 
-@include theme($scale: 1.0);
+@include theme;
+
+@media only screen and (max-width: $maxWidth) {
+
+}
