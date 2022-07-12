@@ -92,3 +92,9 @@ body {
   background-image: url("assets/img/sunnyside 2-1.svg");
   background-repeat: no-repeat;
 }
+
+.elements {
+  display: grid;
+  grid-template-columns: 720px 720px;
+  grid-template-areas: "brand egg" "glass audience" "graphic photography";
+}

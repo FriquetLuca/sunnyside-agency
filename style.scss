@@ -1,4 +1,5 @@
 // 760px et inférieur => Mobile
+@use "sass:math";
 
 @font-face {
     font-family: "Fraunces";
@@ -8,6 +9,8 @@
     font-family: "Barlow";
     src: url("assets/fonts/Barlow-Black.ttf");
 }
+$maxWidth: 1440px;
+$halfMaxWidth: math.div($maxWidth, 2);
 
 html, body {
     padding: 0;
@@ -16,7 +19,7 @@ html, body {
     font-style: normal;
 }
 body {
-    max-width: 1440px;
+    max-width: $maxWidth;
     margin: {
         left: auto;
         right: auto;
@@ -98,7 +101,15 @@ body {
             background-image: url('assets/img/sunnyside\ 2-1.svg');
             background-repeat: no-repeat;
         }
-    }    
+    }
+    .elements {
+        display: grid;
+        grid-template-columns: $halfMaxWidth $halfMaxWidth;
+        grid-template-areas:
+            "brand egg" 
+            "glass audience"
+            "graphic photography";
+    }
 }
 
 @include theme($scale: 1.0);
