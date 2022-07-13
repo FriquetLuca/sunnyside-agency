@@ -614,11 +614,16 @@ html, body {
     margin-right: auto;
   }
   .foot_pics {
+    width: 100%;
     grid-template-columns: 50% 50%;
     grid-gap: 0px 0px;
     grid-template-areas: "foot_pic-1 foot_pic-2" "foot_pic-3 foot_pic-4";
   }
   .foot_pic, .foot_pic-1, .foot_pic-2, .foot_pic-3, .foot_pic-4 {
+    width: 100%;
     background-size: cover;
+  }
+  .foot_pic-1, .foot_pic-2, .foot_pic-3, .foot_pic-4 {
+    width: 100%;
   }
 }

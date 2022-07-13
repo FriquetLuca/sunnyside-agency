@@ -662,6 +662,7 @@ html, body {
     }
     .foot {
         &_pics {
+            width: 100%;
             grid-template-columns: 50% 50%;
             grid-gap: 0px 0px;
             grid-template-areas:
@@ -669,9 +670,11 @@ html, body {
                 "foot_pic-3 foot_pic-4";
         }
         &_pic {
+            width: 100%;
             background-size:cover;
             &-1, &-2, &-3, &-4 {
                 @extend .foot_pic;
+                width: 100%;
             }
         }
     }
