@@ -13,29 +13,24 @@ $maxWidth: 1440px;
 $halfMaxWidth: math.div($maxWidth, 2);
 $quarterMaxWidth: math.div($maxWidth, 4);
 
-html, body {
-    padding: 0;
-    margin: 0;
-    font-family: 'Fraunces';
-    font-style: normal;
-}
-body {
-    max-width: $maxWidth;
-    margin: {
-        left: auto;
-        right: auto;
-    }
-}
+
 
 @mixin theme {
     .head {
         top: 0;
-        height: 800px;
         text-align: center;
         background-size:contain;
         background-image: url('assets/img/grapefruit.png');
         background-repeat: no-repeat;
         background-position: center;
+        &_arrow {
+            padding: 0;
+            margin: 0;
+            background-size:contain;
+            background-image: url('assets/img/arrow.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
         &_title {
             padding: 0;
             margin: 0;
@@ -56,16 +51,7 @@ body {
                 display: inline;
                 float: right;
                 color: #FFFFFF;
-                padding: {
-                    top: 50px;
-                    left: 24px;
-                    right: 24px;
-                }
                 font-family: 'Barlow';
-                font-weight: 600;
-                font-size: 18px;
-                line-height: 25px;
-                letter-spacing: -0.128571px;
                 &:hover {
                     color: #77cdf5;
                 }
@@ -77,19 +63,8 @@ body {
             background: #FFFFFF;
             border: none;
             border-radius: 28px;
-            margin-left: 30px;
-            padding-left: 30px;
-            padding-right: 30px;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            margin-top: 34px;
-            margin-right: 48px;
             font-family: 'Fraunces';
             font-style: normal;
-            font-weight: 700;
-            font-size: 15px;
-            line-height: 25px;
-            letter-spacing: -0.107143px;
             text-transform: uppercase;
             &:hover {
                 color: #FFFFFF;
@@ -97,25 +72,38 @@ body {
             }
         }
         &_sunnyside {
-            margin-left: 40px;
-            margin-top: 50px;
-            width: 170px;
-            height: 33px;
             display: inline;
             float: left;
             background-image: url('assets/img/sunnyside\ 2-1.svg');
             background-repeat: no-repeat;
             background-position: center;
         }
+        &_burger {
+            margin: 0;
+            padding: 0;
+            display: inline;
+            float: right;
+            width: 40px;
+            margin-top: 32px;
+            margin-right: 50px;
+            height: 25px;
+            background: none;
+            border: none;
+            &_bar {
+                display: block;
+                background-color: #FFFFFF;
+                height: 2px;
+                margin-top: 4px;
+                margin-bottom: 4px;
+            }
+            &:hover {
+                .head_burger_bar {
+                    background-color: #77cdf5;
+                }
+            }
+        }
     }
     .elements {
-        display: grid;
-        grid-template-columns: $halfMaxWidth $halfMaxWidth;
-        grid-gap: 0px 0px;
-        grid-template-areas:
-            "brand egg" 
-            "glass audience"
-            "graphic photography";
         section {
             padding: 0;
             margin: 0;
@@ -128,6 +116,12 @@ body {
         background-repeat: no-repeat;
         background-position: center;
     }
+    .graphic {
+        background-image: url('assets/img/graphic-design.png');
+    }
+    .photography {
+        background-image: url('assets/img/photography.png');
+    }
     .egg {
         @extend .img-block-txt;
         background-image: url('assets/img/egg.jpg');
@@ -135,85 +129,6 @@ body {
     .glass {
         @extend .img-block-txt;
         background-image: url('assets/img/glass.jpg');
-    }
-    .graphic {
-        @extend .img-block-txt;
-        background-image: url('assets/img/graphic-design.png');
-    }
-    .photography {
-        @extend .img-block-txt;
-        background-image: url('assets/img/photography.png');
-    }
-    .brand {
-        padding: 0px;
-        margin: 0px;
-        position: relative;
-    }
-    .audience {
-        @extend .brand;
-    }
-    .details {
-        position: absolute;
-        top: 50%;
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-        margin-left: 165px;
-        margin-right: 165px;
-        font-style: normal;
-        font-weight: 900;
-        h2 {
-            font-family: 'Fraunces';
-            font-size: 40px;
-            line-height: 49px;
-            letter-spacing: -0.285714px;
-            color: #24303E;
-        }
-        p {
-            font-family: 'Barlow';
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 30px;
-            letter-spacing: -0.128571px;
-            color: #808397;
-        }
-        &_underline {
-            height: 8px;
-            width: 124px;
-            border-radius: 10px;
-            opacity: 0.25;
-            &-1 {
-                @extend .details_underline;
-                background-color: #FAD400;
-            }
-            &-2 {
-                @extend .details_underline;
-                background-color: #FE7766;
-            }
-        }
-        &_content {
-            &:hover {
-                .details_underline {
-                    opacity: 1.0;
-                    &-1, &-2 {
-                        opacity: 1.0;
-                    }
-                }
-            }
-            &_link {
-                position: absolute;
-                margin-top: -14px;
-                z-index: 1;
-                a {
-                    font-family: 'Fraunces';
-                    font-size: 15px;
-                    line-height: 25px;
-                    letter-spacing: 1px;
-                    text-transform: uppercase;
-                    color: #24303E;
-                    text-decoration: none;
-                }
-            }
-        }
     }
     .testimonials {
         margin-top: 120px;
@@ -234,9 +149,6 @@ body {
             padding: 0;
             margin: 0;
             width: 100%;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
         }
         &_post {
             width: calc(33% - 30px);
@@ -329,9 +241,7 @@ body {
             grid-template-columns: $quarterMaxWidth $quarterMaxWidth $quarterMaxWidth $quarterMaxWidth;
             grid-gap: 0px 0px;
             grid-template-areas:
-                "brand egg" 
-                "glass audience"
-                "graphic photography";
+                "foot_pic-1 foot_pic-2 foot_pic-3 foot_pic-4";
         }
         &_sunnyside-logo {
             margin-top: 72px;
@@ -410,8 +320,360 @@ body {
     }
 }
 
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Fraunces';
+    font-style: normal;
+}
+
 @include theme;
 
-@media only screen and (max-width: $maxWidth) {
+@media only screen and (min-width: ($maxWidth + 1px)) {
+    body {
+        max-width: $maxWidth;
+        margin: {
+            left: auto;
+            right: auto;
+        }
+    }
+    .head {
+        height: 800px;
+        &_arrow {
+            margin-top: 80px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60px;
+            height: 200px;
+        }
+        &_options {
+            &_choice {
+                padding: {
+                    top: 50px;
+                    left: 24px;
+                    right: 24px;
+                }
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 25px;
+                letter-spacing: -0.128571px;
+            }
+        }
+        &_burger {
+            visibility: hidden;
+        }
+        &_contact {
+            margin-left: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-top: 34px;
+            margin-right: 48px;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 25px;
+            letter-spacing: -0.107143px;
+        }
+        &_sunnyside {
+            margin-left: 40px;
+            margin-top: 50px;
+            width: 170px;
+            height: 33px;
+        }
+    }
+    .graphic, .photography {
+        display: block;
+        height: 600px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .elements {
+        display: grid;
+        grid-template-columns: $halfMaxWidth $halfMaxWidth;
+        grid-gap: 0px 0px;
+        grid-template-areas:
+            "brand egg" 
+            "glass audience"
+            "graphic photography";
+    }
+    .brand, .audience {
+        padding: 0px;
+        margin: 0px;
+        position: relative;
+    }
+    .testimonials_posts {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .details {
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        margin-left: 165px;
+        margin-right: 165px;
+        font-style: normal;
+        font-weight: 900;
+        h2 {
+            font-family: 'Fraunces';
+            font-size: 40px;
+            line-height: 49px;
+            letter-spacing: -0.285714px;
+            color: #24303E;
+        }
+        p {
+            font-family: 'Barlow';
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 30px;
+            letter-spacing: -0.128571px;
+            color: #808397;
+        }
+        &_underline {
+            height: 8px;
+            width: 124px;
+            border-radius: 10px;
+            opacity: 0.25;
+            &-1 {
+                height: 8px;
+                width: 124px;
+                border-radius: 10px;
+                opacity: 0.25;
+                background-color: #FAD400;
+            }
+            &-2 {
+                height: 8px;
+                width: 124px;
+                border-radius: 10px;
+                opacity: 0.25;
+                background-color: #FE7766;
+            }
+        }
+        &_content {
+            &:hover {
+                .details_underline {
+                    opacity: 1.0;
+                    &-1, &-2 {
+                        opacity: 1.0;
+                    }
+                }
+            }
+            &_link {
+                position: absolute;
+                margin-top: -14px;
+                z-index: 1;
+                a {
+                    font-family: 'Fraunces';
+                    font-size: 15px;
+                    line-height: 25px;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    color: #24303E;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
 
+@media only screen and (max-width: $maxWidth) {
+    html, body {
+        width: 100%;
+    }
+    .head {
+        width: 100%;
+        height: 800px;
+        background-size:auto;
+        &_nav {
+            height: 30px;
+        }
+        &_title {
+            font-size: 40px;
+        }
+        &_arrow {
+            margin-top: 80px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 30px;
+            height: 100px;
+        }
+        &_options {
+            &_choice {
+                visibility: hidden;
+            }
+        }
+        &_contact {
+            visibility: hidden;
+        }
+        &_sunnyside {
+            margin-left: 24px;
+            margin-top: 32px;
+            width: 124px;
+            height: 25px;
+        }
+    }
+    .elements {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-gap: 0px 0px;
+        grid-template-areas:
+            "egg"
+            "brand"
+            "glass"
+            "audience"
+            "graphic"
+            "photography";
+    }
+    .graphic, .photography {
+        display: block;
+        height: 600px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+    }
+    .brand, .audience {
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        position: static;
+    }
+    .egg, .glass {
+        width: 100%;
+        background-size: cover;
+    }
+    .egg {
+        grid-row-start: 1;
+        grid-row-end: 1;
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+    .brand {
+        grid-row-start: 2;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+    .glass {
+        grid-row-start: 3;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+    .audience {
+        grid-row-start: 4;
+        grid-row-end: 4;
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+    .graphic {
+        grid-row-start: 5;
+        grid-row-end: 5;
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+    .photography {
+        grid-row-start: 6;
+        grid-row-end: 6;
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+    .details {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: 35px;
+        margin-right: 35px;
+        h2 {
+            font-weight: 900;
+            font-size: 32px;
+            line-height: 39px;
+            text-align: center;
+            letter-spacing: -0.228571px;
+            color: #24303E;
+        }
+        p {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 30px;
+            text-align: center;
+            letter-spacing: -0.128571px;
+            color: #808397;
+        }
+        &_underline {
+            height: 8px;
+            width: 124px;
+            border-radius: 10px;
+            opacity: 0.25;
+            &-1 {
+                margin-top: -10px;
+                margin-left: auto;
+                margin-right: auto;
+                height: 8px;
+                width: 124px;
+                border-radius: 10px;
+                opacity: 0.25;
+                background-color: #FAD400;
+            }
+            &-2 {
+                margin-top: -10px;
+                margin-left: auto;
+                margin-right: auto;
+                height: 8px;
+                width: 124px;
+                border-radius: 10px;
+                opacity: 0.25;
+                background-color: #FE7766;
+            }
+        }
+        &_content {
+            &:hover {
+                .details_underline {
+                    opacity: 1.0;
+                    &-1, &-2 {
+                        opacity: 1.0;
+                    }
+                }
+            }
+            &_link {
+                text-align: center;
+                z-index: 1;
+                a {
+                    font-family: 'Fraunces';
+                    font-size: 15px;
+                    line-height: 25px;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    color: #24303E;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .testimonials_posts {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .testimonials_post {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .foot {
+        &_pics {
+            grid-template-columns: 50% 50%;
+            grid-gap: 0px 0px;
+            grid-template-areas:
+                "foot_pic-1 foot_pic-2" 
+                "foot_pic-3 foot_pic-4";
+        }
+        &_pic {
+            background-size:cover;
+            &-1, &-2, &-3, &-4 {
+                @extend .foot_pic;
+            }
+        }
+    }
+    
 }
